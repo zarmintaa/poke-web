@@ -19,10 +19,11 @@ const loadDataAll = async ({ url }) => {
 const generateTables = (data) => {
   const { id, types, name, weight, height } = data;
   const type = types[0].type.name;
+  const typeString = types.map((e) => e.type.name).join(", ");
   tableContainer.innerHTML += generateTableItem({
     id,
     name,
-    type,
+    type: typeString,
     weight,
     height,
   });
