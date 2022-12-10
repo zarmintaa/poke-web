@@ -50,9 +50,11 @@ export const loadTables = async () => {
   pokemons.forEach(generateTables);
   await getDetails();
 };
+
 function searchByName(searchIn, searchFor) {
   return searchIn.toLowerCase().includes(searchFor.toLowerCase());
 }
+
 export const searchPokemon = ({ keyword }) => {
   if (!keyword.length) {
     tableHeader.classList.remove("d-none");
