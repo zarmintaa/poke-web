@@ -1,5 +1,10 @@
 import { fetchJson } from "./bootstrap/utils.js";
-import { pokemonURL, tableContainer } from "./variables.js";
+import {
+  pokemonURL,
+  spinner,
+  tableContainer,
+  tableHeader,
+} from "./variables.js";
 import { generateDetail, generateTableItem } from "./components.js";
 
 let pokemons = [];
@@ -43,6 +48,8 @@ const getDetails = async () => {
 
 export const loadTables = async () => {
   const data = await loadDataAll({ url: pokemonURL });
+  spinner.classList.add("d-none");
+  tableHeader.classList.remove("d-none");
   pokemons = [...data];
   pokemons.forEach(generateTables);
   await getDetails();

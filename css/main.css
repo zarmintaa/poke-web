@@ -9,6 +9,10 @@ body {
     background-color: #3B185F;
 }
 
+.text-special-attack {
+    color: #3B185F;
+}
+
 .special-defence {
     background-color: #153462;
 }
