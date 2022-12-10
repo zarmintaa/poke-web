@@ -1,5 +1,6 @@
 import { fetchJson } from "./bootstrap/utils.js";
 import {
+  loadTrigger,
   pokemonURL,
   spinner,
   tableContainer,
@@ -8,9 +9,14 @@ import {
 import { generateDetail, generateTableItem } from "./components.js";
 
 let pokemons = [];
+let limit = 10;
 
 const loadDataAll = async ({ url }) => {
   const { results } = await fetchJson(url);
+  if (!results) {
+    return [];
+  }
+  console.log(results);
   return await Promise.all(results.map((it) => fetchJson(it.url))).catch((e) =>
     console.warn(e)
   );
@@ -44,7 +50,9 @@ const getDetails = async () => {
 };
 
 export const loadTables = async () => {
-  const data = await loadDataAll({ url: pokemonURL });
+  const data = await loadDataAll({
+    url: `${pokemonURL}?limit=${limit}&offset=0`,
+  });
   spinner.classList.add("d-none");
   tableHeader.classList.remove("d-none");
   pokemons = [...data];
@@ -57,7 +65,10 @@ function searchByName({ searchIn, searchFor }) {
 }
 
 export const searchPokemon = ({ keyword }) => {
+  loadTrigger.classList.add("d-none");
+
   if (!keyword.length) {
+    loadTrigger.classList.remove("d-none");
     tableHeader.classList.remove("d-none");
     pokemons.forEach(generateTables);
   }
@@ -72,4 +83,13 @@ export const searchPokemon = ({ keyword }) => {
     document.getElementById("empty").classList.add("d-none");
   }
   filter.forEach(generateTables);
+};
+
+export const loadPageData = async () => {
+  limit += 10;
+  pokemons = await loadDataAll({
+    url: `${pokemonURL}?limit=${limit}&offset=0`,
+  });
+  pokemons.forEach(generateTables);
+  await getDetails();
 };

@@ -6,7 +6,7 @@ export const generateTableItem = ({ id, name, type, weight, height }) => {
             <td>${weight}</td>
             <td>${height}</td>
             <td>
-              <button class="btn badge special-attack" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${id}">More</button>
+              <button class="btn badge special-attack" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${id}">Detail</button>
             </td>
           </tr>`;
 };
