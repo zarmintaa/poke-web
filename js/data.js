@@ -57,6 +57,7 @@ export const loadTables = async () => {
   tableHeader.classList.remove("d-none");
   pokemons = [...data];
   pokemons.forEach(generateTables);
+  loadTrigger.classList.remove("d-none");
   await getDetails();
 };
 
