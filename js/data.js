@@ -59,12 +59,14 @@ function searchByName(searchIn, searchFor) {
 }
 export const searchPokemon = ({ keyword }) => {
   if (!keyword.length) {
+    tableHeader.classList.remove("d-none");
     pokemons.forEach(generateTables);
   }
 
   const filter = pokemons.filter((poke) => searchByName(poke.name, keyword));
   if (filter.length === 0) {
     document.getElementById("empty").classList.remove("d-none");
+    tableHeader.classList.add("d-none");
   } else {
     document.getElementById("empty").classList.add("d-none");
   }
