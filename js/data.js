@@ -91,6 +91,7 @@ export const loadPageData = async () => {
   pokemons = await loadDataAll({
     url: `${pokemonURL}?limit=${limit}&offset=0`,
   });
+  tableContainer.innerHTML = "";
   pokemons.forEach(generateTables);
   await getDetails();
 };
