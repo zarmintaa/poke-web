@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js/main.js" type="module"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg special-attack">
+      <div class="container-md">
+        <h1 class="navbar-brand" style="font-size: 2.5rem; color: yellow">POKE APP</h1>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto my-4">
+          <form class="d-flex" role="search">
+            <input
+              aria-label="Search"
+              class="form-control me-2"
+              placeholder="Search Pokemon..."
+              id="search-input"
+              type="search"
+            />
+           <!-- <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>-->
+          </form>
+        </div>
+      </div>
+      <h1 id="empty" class="text-center text-danger d-none">Data kosong</h1>
+      <table class="table table-striped my3 table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Height</th>
+            <th scope="col">Detail</th>
+          </tr>
+        </thead>
+
+        <tbody id="tables">
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>
+              <button
+                class="btn badge text-bg-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Detail
+              </button>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="modal-container">
+            <!-- <div class="row">
+              <div class="col-lg-6">
+                <div class="img-detail">
+                  <img
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6 gy-3">
+                <h4 class="text-center mb-3">Statistics</h4>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                    role="progressbar"
+                    aria-label="Success example"
+                    style="width: 25%"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    HP
+                  </div>
+                </div>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                    role="progressbar"
+                    aria-label="Danger example"
+                    style="width: 100%"
+                    aria-valuenow="100"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    Attack
+                  </div>
+                </div>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar defence progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-label="Info example"
+                    style="width: 50%"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="200"
+                  >
+                    Defence
+                  </div>
+                </div>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar special-attack progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-label="Warning example"
+                    style="width: 75%"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    Special Attack
+                  </div>
+                </div>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar special-defence progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-label="Warning example"
+                    style="width: 75%"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    Special Defence
+                  </div>
+                </div>
+                <div class="progress my-1">
+                  <div
+                    class="progress-bar speed progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-label="Warning example"
+                    style="width: 75%"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    Speed
+                  </div>
+                </div>
+              </div>
+            </div>-->
+          </div>
+          <!--<div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+  </body>
+</html>
