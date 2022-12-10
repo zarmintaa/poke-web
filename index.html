@@ -32,14 +32,20 @@
         </div>
       </div>
 
-     <div class="row" id="spinner">
-       <div class="spinner-border col-lg-4 mx-auto text-special-attack" role="status">
-         <span class="visually-hidden">Loading...</span>
-       </div>
-     </div>
+      <div class="row" id="spinner">
+        <div
+          class="spinner-border col-lg-4 mx-auto text-special-attack"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
 
       <h1 id="empty" class="text-center text-danger d-none">Data kosong</h1>
-      <table class="table table-striped my3 table-responsive d-none" id="table-header">
+      <table
+        class="table table-striped my3 table-responsive d-none"
+        id="table-header"
+      >
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -51,8 +57,7 @@
           </tr>
         </thead>
 
-        <tbody id="tables">
-        </tbody>
+        <tbody id="tables"></tbody>
       </table>
     </div>
 
@@ -66,17 +71,18 @@
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
+          <div class="modal-header special-attack border-0">
+            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
+              Detail
+            </h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close bg-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body" id="modal-container">
-          </div>
+          <div class="modal-body" id="modal-container"></div>
         </div>
       </div>
     </div>
