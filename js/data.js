@@ -50,16 +50,20 @@ export const loadTables = async () => {
   pokemons.forEach(generateTables);
   await getDetails();
 };
-function searchByName(searchIn, searchFor) {
+
+function searchByName({ searchIn, searchFor }) {
   return searchIn.toLowerCase().includes(searchFor.toLowerCase());
 }
+
 export const searchPokemon = ({ keyword }) => {
   if (!keyword.length) {
     tableHeader.classList.remove("d-none");
     pokemons.forEach(generateTables);
   }
 
-  const filter = pokemons.filter((poke) => searchByName(poke.name, keyword));
+  const filter = pokemons.filter((poke) =>
+    searchByName({ searchIn: poke.name, searchFor: keyword })
+  );
   if (filter.length === 0) {
     document.getElementById("empty").classList.remove("d-none");
     tableHeader.classList.add("d-none");
