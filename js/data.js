@@ -16,10 +16,6 @@ const loadDataAll = async ({ url }) => {
   );
 };
 
-const loadData = async ({ url }) => {
-  return await fetchJson(url);
-};
-
 const generateTables = (data) => {
   const { id, types, name, weight, height } = data;
   const type = types[0].type.name;
