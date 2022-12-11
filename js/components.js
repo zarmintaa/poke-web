@@ -125,7 +125,6 @@ export const generateCard = ({ id, name, types }) => {
             <h4 class="card-subtitle mb-2 text-muted position-absolute top-0 p-3">#${id}</h4>
             <div class="card-body p-4">
               <div class="d-flex justify-content-between align-items-center">
-
                 <h3 class="card-title" id="card-item" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${id}">${name}</h3>
               </div>
               ${typeItem({ types }).outerHTML}
