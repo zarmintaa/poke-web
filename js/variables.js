@@ -4,3 +4,4 @@ export const searchInput = document.getElementById("search-input");
 export const spinner = document.getElementById("spinner");
 export const tableHeader = document.getElementById("table-header");
 export const loadTrigger = document.getElementById("load-trigger");
+export const spinnerLoad = document.getElementById("spinner-load");

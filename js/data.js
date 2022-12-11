@@ -3,6 +3,7 @@ import {
   loadTrigger,
   pokemonURL,
   spinner,
+  spinnerLoad,
   tableContainer,
   tableHeader,
 } from "./variables.js";
@@ -87,11 +88,15 @@ export const searchPokemon = ({ keyword }) => {
 };
 
 export const loadPageData = async () => {
+  spinnerLoad.classList.remove("d-none");
+  loadTrigger.classList.add("d-none");
   limit += 10;
   pokemons = await loadDataAll({
     url: `${pokemonURL}?limit=${limit}&offset=0`,
   });
   tableContainer.innerHTML = "";
   pokemons.forEach(generateTables);
+  spinnerLoad.classList.add("d-none");
+  loadTrigger.classList.remove("d-none");
   await getDetails();
 };
