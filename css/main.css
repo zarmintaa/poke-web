@@ -3,6 +3,8 @@
 body {
     font-family: 'VT323', monospace;
     font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 100;
 }
 
 .special-attack {
@@ -46,5 +48,23 @@ body {
     height: 200px;
     margin: 0 auto 0 auto;
     transform-origin: bottom;
+}
 
+.style-card {
+    transition: ease .5s;
+    border: none;
+}
+
+.style-card:hover {
+    background: rgba(255, 255, 255, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
+    transform: scale(1.08);
+}
+
+.card-title:hover {
+    color: orangered;
 }

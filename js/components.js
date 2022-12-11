@@ -1,3 +1,5 @@
+import { colors } from "./variables.js";
+
 export const generateTableItem = ({ id, name, type, weight, height }) => {
   return ` <tr>
             <th scope="row">${id}</th>
@@ -105,4 +107,48 @@ export const generateDetail = ({ stats, image, name }) => {
                 </div>
               </div>
             </div>`;
+};
+
+export const generateCard = ({ id, name, types }) => {
+  return `<div class="col-lg-3 col-mb-4 col-sm-6"  style="cursor: pointer">
+          <div class="card style-card border-0 position-relative">
+            <div
+              class="d-flex align-items-center justify-content-center"
+            >
+              <img
+                style="max-height: 180px; max-width: 180px"
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+            <h4 class="card-subtitle mb-2 text-muted position-absolute top-0 p-3">#${id}</h4>
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center">
+
+                <h3 class="card-title" id="card-item" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${id}">${name}</h3>
+              </div>
+              ${typeItem({ types }).outerHTML}
+            </div>
+          </div>
+        </div>`;
+};
+
+const generateSpanTypePokemon = ({ type }) => {
+  const span = document.createElement("span");
+  span.classList.add("badge");
+  span.style.backgroundColor = colors[`${type}`];
+  span.innerText = type;
+  return span;
+};
+
+const typeItem = ({ types }) => {
+  const div = document.createElement("div");
+  div.classList.add("d-flex", "mt-1", "gap-2");
+  const arr = [];
+  types.forEach((it) => {
+    div.appendChild(generateSpanTypePokemon({ type: it.type.name }));
+  });
+  console.log(div);
+  return div;
 };
